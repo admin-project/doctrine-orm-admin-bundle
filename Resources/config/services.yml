@@ -9,6 +9,7 @@ services:
 
   adminproject.builder.orm_datagrid:
     class: AdminProject\DoctrineOrmAdminBundle\Builder\DatagridBuilder
+    arguments: ["@form.factory"]
 
   adminproject.builder.orm_fieldmapper:
     class: AdminProject\DoctrineOrmAdminBundle\Builder\FieldMapperBuilder

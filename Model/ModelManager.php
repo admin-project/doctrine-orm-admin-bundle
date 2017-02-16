@@ -9,6 +9,7 @@ namespace AdminProject\DoctrineOrmAdminBundle\Model;
 
 use AdminProject\AdminBundle\Model\ModelManagerInterface;
 use AdminProject\AdminBundle\Model\Quer;
+use AdminProject\DoctrineOrmAdminBundle\Model\Proxy\QueryProxy;
 use Doctrine\ORM\EntityManager;
 
 /**
@@ -80,11 +81,13 @@ class ModelManager implements ModelManagerInterface
      * Returns the query builder.
      * @param string $class
      * @param string $alias
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return QueryProxy
      */
     public function createQuery($class, $alias = 'o')
     {
-        return $this->entityManager->getRepository($class)->createQueryBuilder($alias);
+        return new QueryProxy(
+            $this->entityManager->getRepository($class)->createQueryBuilder($alias)
+        );
     }
 
 
