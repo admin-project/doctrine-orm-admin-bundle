@@ -1,0 +1,15 @@
+services:
+#    admin_project_doctrine_orm_admin.example:
+#        class: AdminProject\DoctrineOrmAdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+  adminproject.manager.orm:
+    class:  AdminProject\DoctrineOrmAdminBundle\Model\ModelManager
+    arguments: ["@doctrine.orm.entity_manager"]
+
+  adminproject.builder.orm_datagrid:
+    class: AdminProject\DoctrineOrmAdminBundle\Builder\DatagridBuilder
+
+  adminproject.builder.orm_fieldmapper:
+    class: AdminProject\DoctrineOrmAdminBundle\Builder\FieldMapperBuilder
+    arguments: ["@adminproject.manager.orm"]

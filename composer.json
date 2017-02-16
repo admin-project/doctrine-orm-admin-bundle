@@ -1,0 +1,24 @@
+{
+    "name": "admin-project/doctrine-orm-admin-bundle",
+    "type": "symfony-bundle",
+    "description": "The doctrine orm admin bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian Seidelmann",
+            "email": "sebastian.seidelmann@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "admin-project/admin-bundle": "dev-master"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": { "AdminProject\\AdminBundle\\": "" }
+    }
+}
